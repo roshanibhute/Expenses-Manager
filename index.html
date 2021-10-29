@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <style>
+      
+        body{
+            background-color: gray;
+            align-content: center;
+            align-items: center;
+        }
+        .container{
+            height: 300px;
+            position: relative;
+            border: 3px solid;
+            align-content: center;
+            align-items: center;
+        }
+        .vertical-center{
+            margin: 0;
+            align-content: center;
+            align-items:center;
+        }
+        .btn1{
+            background-color: rgb(26, 139, 26);
+            border: none;
+            color: white;
+            padding: 15px 50px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        h2{
+            text-decoration: underline;
+            color: blue;
+            padding: 30px,40px;
+            text-align: center;
+            font-size: 40px;
+        }
+        #sab, #sab1{
+            background-color: none;
+            border: none;
+            margin: 8px;
+            color: rgb(26, 20, 20);
+            padding: 8px 30px ;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        #otp, #otp1{
+            background-color: none;
+            border: none;
+            margin: 8px;
+            color: rgb(26, 20, 20);
+            padding: 8px 30px ;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        #tog, #tog1{
+            text-decoration: none;
+            color: blanchedalmond;
+            margin: 8px;
+            border: none;
+            background-color: rgb(26, 139, 26); 
+            padding: 8px 30px ;
+            text-align: center;
+            font-size: 16px;
+        }
+        #display{
+            text-decoration: none;
+            color: black solid;
+            margin: 20px;
+            border: none;
+            background-color: none; 
+            padding: 15px 40px ;
+            text-align: center;
+            font-size: 30px;
+        }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="vetical-center">
+                <h2>Expenses Manager</h2>
+            <button class="btn1" onclick="sly(); this.onclick=null">Income</button>
+            <button  class="btn1"onclick="exp(); this.onclick=null">Expenses</button>
+            <button  class="btn1" onclick="dis(); this.onclick=null">Display</button>
+            <p id="display"></p>
+            <br>
+        </div>
+        </div>
+    </body>
+
+
+<script >
+    function sly() {
+        var sal=document.createElement("INPUT");
+        var sal1=document.createElement("INPUT");
+        var sal2=document.createElement("BUTTON");
+        sal.setAttribute("id","sab")
+        sal1.setAttribute("id","otp")
+        sal2.innerHTML="Button";
+        sal2.setAttribute("id","tog")
+        sal2.setAttribute("onClick","btn();");
+        document.body.append(sal)
+        document.body.append(sal1) 
+        document.body.append(sal2);
+    }
+    function btn(){
+        alert(`credited ${document.getElementById("otp").value}`);
+        // btn.style.display='none';
+
+        // var ab=document.getElementById("otp");
+        // ab.remove();
+        // var abc=document.getElementById("sab");
+        // abc.remove();
+        // var abcd=document.getElementById("tog");
+        // abcd.remove();
+        // var x = document.getElementById("sab");
+        // var y=document.getElementById("otp");
+        // var z=document.getElementById("tog");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+//   if (y.style.display === "none") {
+//     y.style.display = "block";
+//   } else {
+//     y.style.display = "none";
+//   }
+//   if (z.style.display === "none") {
+//     z.style.display = "block";
+//   } else {
+//     z.style.display = "none";
+//   }
+        }
+        
+    
+    function exp(){
+        var ex=document.createElement("INPUT");
+        var ex1=document.createElement("INPUT");
+        var ex2=document.createElement("BUTTON");
+        ex.setAttribute("id","sab1")
+        ex1.setAttribute("id","otp1")
+        ex2.innerHTML="Button";
+        ex2.setAttribute("id","tog1")
+        ex2.setAttribute("onClick","btn1();")
+        document.body.appendChild(ex)
+        document.body.appendChild(ex1)
+        document.body.appendChild(ex2);
+    }
+    function btn1(){
+        alert(`expensive ${document.getElementById("otp1").value}`);
+        //  var x=document.getElementById("otp1");
+        // x.remove();
+        // var xy=document.getElementById("sab1");
+        // xy.remove();
+        // var xyz=document.getElementById("tog1");
+        // xyz.remove();
+        }
+    function dis(){
+        const val1= parseInt( document.getElementById("otp").value);
+        const val2=parseInt(document.getElementById("otp1").value)
+        const sum=val1-val2; 
+        document.getElementById("display").innerHTML=`Source = ${val1}
+        Expenses = ${val2}
+        Balance = ${sum}`;
+    }
+  </script>
+
+</html>
